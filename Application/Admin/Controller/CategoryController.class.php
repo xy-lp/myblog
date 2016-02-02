@@ -13,7 +13,6 @@ class CategoryController extends Controller{
      */
     public function cat_list(){
         $list=D('Category')->getTree();
-
         $this->assign('list',$list);
         $this->display();
     }
@@ -22,19 +21,20 @@ class CategoryController extends Controller{
      * 添加分类操作
      */
     public function cat_add(){
+        $model=D('Category');
         if(IS_POST){
-            $model=D('Category');
             if(!$data=$model->create()){
                 $this->error($model->getError(),U('Category/cat_add'),1);
             }else{
-                if($model->add($data)){
+                if($model->add($data))
                     $this->success('添加成功',U('Category/cat_list'),1);
-                    exit;
-                }else{
+                else
                     $this->error('添加失败',U('Category/cat_add'),1);
-                }
             }
+            exit;
         }
+        $cat_list=$model->where(array('is_show'=>'1','cat_pid'=>'0'))->select();
+        $this->assign('cat_list',$cat_list);
         $this->display();
     }
 

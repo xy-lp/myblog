@@ -25,8 +25,11 @@
     <li><label>分类的父级</label>
         <select name="pid" id="pid" class="dfinput">
             <option value="0">--顶级分类--</option>
-            <option value="1">--PHP技术--</option>
-            <option value="0">--MYSQL技术--</option>
+
+            <foreach name="cat_list" item="v">
+                <option value="{$v.cat_id}">--{$v.cat_name}--</option>
+            </foreach>
+
         </select>
         <i>注意:父级默认为"顶级分类"</i>
     </li>
@@ -39,7 +42,7 @@
 
 <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
 <script type="text/javascript">
-    $(function(){
+    /*$(function(){
         $(".btn").bind('click',function(){
             //add();
         });
@@ -49,7 +52,7 @@
 
     }
 
-    /*function checkForm(){
+    function checkForm(){
         var check_error=false;
         $("#cat_name").bind('blur',function(){
             if(!$(this).val() || $(this).val().length>20){
@@ -76,7 +79,7 @@
             }
         });
         return check_error;
-    }*/
+    }
 
     function add(){
         var cat_name=$('#cat_name').val();

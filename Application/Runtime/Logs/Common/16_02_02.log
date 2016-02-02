@@ -70,3 +70,63 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
 ERR: 无法加载模块:Public
 
+[ 2016-02-02T12:00:53+08:00 ] 127.0.0.1 /skin/2014/js/silder.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-02T12:00:53+08:00 ] 127.0.0.1 /cpro/ui/i.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-02T12:00:53+08:00 ] 127.0.0.1 /cpro/ui/cnw.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003239s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-02T12:00:53+08:00 ] 127.0.0.1 /static/api/js/share.js?v=89860593.js?cdnversion=403995
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+ERR: 无法加载模块:Static
+
+[ 2016-02-02T12:00:53+08:00 ] 127.0.0.1 /skin/blog/images/new.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-02T12:06:26+08:00 ] 127.0.0.1 /cpro/ui/cnw.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-02T12:06:26+08:00 ] 127.0.0.1 /cpro/ui/i.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-02T12:06:26+08:00 ] 127.0.0.1 /skin/2014/js/silder.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-02T12:06:26+08:00 ] 127.0.0.1 /skin/blog/images/new.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-02T12:06:26+08:00 ] 127.0.0.1 /static/api/js/share.js?v=89860593.js?cdnversion=403995
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001261s ]
+ERR: 无法加载模块:Static
+

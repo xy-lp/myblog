@@ -25,8 +25,9 @@
     <li><label>分类的父级</label>
         <select name="pid" id="pid" class="dfinput">
             <option value="0">--顶级分类--</option>
-            <option value="1">--PHP技术--</option>
-            <option value="0">--MYSQL技术--</option>
+
+            <?php if(is_array($cat_list)): foreach($cat_list as $key=>$v): ?><option value="<?php echo ($v["cat_id"]); ?>">--<?php echo ($v["cat_name"]); ?>--</option><?php endforeach; endif; ?>
+
         </select>
         <i>注意:父级默认为"顶级分类"</i>
     </li>
