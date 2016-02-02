@@ -1,10 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
-<link href="/admin/css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/admin/js/jquery.js"></script>
+<link href="/Public/admin/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/Public/admin/js/jquery.js"></script>
 
 </head>
 
@@ -22,13 +22,13 @@
     
     
     <div class="welinfo">
-    <span><img src="/admin/images/sun.png" alt="天气" /></span>
+    <span><img src="/Public/admin/images/sun.png" alt="天气" /></span>
     <b>Admin早上好，欢迎使用信息管理系统</b>(admin@uimaker.com)
     <a href="#">帐号设置</a>
     </div>
     
     <div class="welinfo">
-    <span><img src="/admin/images/time.png" alt="时间" /></span>
+    <span><img src="/Public/admin/images/time.png" alt="时间" /></span>
     <i>您上次登录的时间：2013-10-09 15:22</i> （不是您登录的？<a href="#">请点这里</a>）
     </div>
     
@@ -36,22 +36,22 @@
     
     <ul class="iconlist">
     
-    <li><img src="/admin/images/ico01.png" /><p><a href="#">管理设置</a></p></li>
-    <li><img src="/admin/images/ico02.png" /><p><a href="#">发布文章</a></p></li>
-    <li><img src="/admin/images/ico03.png" /><p><a href="#">数据统计</a></p></li>
-    <li><img src="/admin/images/ico04.png" /><p><a href="#">文件上传</a></p></li>
-    <li><img src="/admin/images/ico05.png" /><p><a href="#">目录管理</a></p></li>
-    <li><img src="/admin/images/ico06.png" /><p><a href="#">查询</a></p></li> 
+    <li><img src="/Public/admin/images/ico01.png" /><p><a href="#">管理设置</a></p></li>
+    <li><img src="/Public/admin/images/ico02.png" /><p><a href="#">发布文章</a></p></li>
+    <li><img src="/Public/admin/images/ico03.png" /><p><a href="#">数据统计</a></p></li>
+    <li><img src="/Public/admin/images/ico04.png" /><p><a href="#">文件上传</a></p></li>
+    <li><img src="/Public/admin/images/ico05.png" /><p><a href="#">目录管理</a></p></li>
+    <li><img src="/Public/admin/images/ico06.png" /><p><a href="#">查询</a></p></li> 
             
     </ul>
     
-    <div class="ibox"><a class="ibtn"><img src="/admin/images/iadd.png" />添加新的快捷功能</a></div>
+    <div class="ibox"><a class="ibtn"><img src="/Public/admin/images/iadd.png" />添加新的快捷功能</a></div>
     
     <div class="xline"></div>
     <div class="box"></div>
     
     <div class="welinfo">
-    <span><img src="/admin/images/dp.png" alt="提醒" /></span>
+    <span><img src="/Public/admin/images/dp.png" alt="提醒" /></span>
     <b>Uimaker信息管理系统使用指南</b>
     </div>
     

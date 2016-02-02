@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
-<link href="/admin/css/style.css" rel="stylesheet" type="text/css" />
-<script language="JavaScript" src="/admin/js/jquery.js"></script>
+<link href="/Public/admin/css/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="/Public/admin/js/jquery.js"></script>
 
 <script type="text/javascript">
 $(function(){	
@@ -53,7 +53,7 @@ $(function(){
         
     <dd>
     <div class="title">
-    <span><img src="/admin/images/leftico01.png" /></span>管理信息
+    <span><img src="/Public/admin/images/leftico01.png" /></span>管理信息
     </div>
     	<ul class="menuson">
         
@@ -64,8 +64,8 @@ $(function(){
             <i></i>
             </div>
             <ul class="sub-menus">
-            <li><a href="/admin/category/getshow" target="rightFrame">分类列表</a></li>
-            <li><a href="/admin/category/add" target="rightFrame">添加分类</a></li>
+            <li><a href="/index.php/Admin/category/cat_list" target="rightFrame">分类列表</a></li>
+            <li><a href="/index.php/Admin/category/cat_add" target="rightFrame">添加分类</a></li>
             </ul>
         </li>
         
@@ -98,7 +98,7 @@ $(function(){
     
     <dd>
     <div class="title">
-    <span><img src="/admin/images/leftico02.png" /></span>其他设置
+    <span><img src="/Public/admin/images/leftico02.png" /></span>其他设置
     </div>
     <ul class="menuson">
         <li><cite></cite><a href="flow.html" target="rightFrame">流程图</a><i></i></li>
@@ -109,7 +109,7 @@ $(function(){
     </dd> 
     
     
-    <dd><div class="title"><span><img src="/admin/images/leftico03.png" /></span>编辑器</div>
+    <dd><div class="title"><span><img src="/Public/admin/images/leftico03.png" /></span>编辑器</div>
     <ul class="menuson">
         <li><cite></cite><a href="#">自定义</a><i></i></li>
         <li><cite></cite><a href="#">常用资料</a><i></i></li>
@@ -119,7 +119,7 @@ $(function(){
     </dd>  
     
     
-    <dd><div class="title"><span><img src="/admin/images/leftico04.png" /></span>日期管理</div>
+    <dd><div class="title"><span><img src="/Public/admin/images/leftico04.png" /></span>日期管理</div>
     <ul class="menuson">
         <li><cite></cite><a href="#">自定义</a><i></i></li>
         <li><cite></cite><a href="#">常用资料</a><i></i></li>
