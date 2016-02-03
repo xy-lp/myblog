@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<title>月哥哥~</title>
 <link href="/Public/admin/css/style.css" rel="stylesheet" type="text/css" />
 
 </head>
@@ -61,7 +61,10 @@
         <td><?php echo ($v["cat_pid"]); ?></td>
         <td><img src="/Public/admin/images/<?php echo empty($v['is_show'])?'no':'yes';?>.gif" alt=""/></td>
         <td><?php echo ($v["cat_sort"]); ?></td>
-        <td><a href="#" class="tablelink">查看</a>     <a href="#" class="tablelink"> 删除</a></td>
+        <td>
+            <a href="#" class="tablelink">查看</a>
+            <a href=" /index.php/Admin/Category/cat_update/cat_id/<?php echo ($v["cat_id"]); ?>" class="tablelink">修改 </a>
+            <a href=" /index.php/Admin/Category/cat_del/cat_id/<?php echo ($v["cat_id"]); ?>" class="tablelink"> 删除</a></td>
         </tr><?php endforeach; endif; ?>
 
         </tbody>

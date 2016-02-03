@@ -61,4 +61,19 @@ class CategoryModel extends Model{
         return $this->createTree($list, $parent_id,$deep=0);
     }
 
+    //获取自己的子分类
+    public function getChild($id){
+        $arr=$this->select();
+        return $this->_getChild($arr,$id);
+    }
+    public function _getChild(){
+        static $ids=array();
+        foreach($arr as $v){
+            if($v['cat_pid']==$id){
+                $ids[]=$v;
+                $this->_getChild($arr,$v['cat_id']);
+            }
+        }
+        return $ids;
+    }
 }

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<title>yu月哥哥~</title>
 <link href="/Public/admin/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -40,7 +40,7 @@
 
 <script type="text/javascript" src="/Public/admin/js/jquery.js"></script>
 <script type="text/javascript">
-    $(function(){
+    /*$(function(){
         $(".btn").bind('click',function(){
             //add();
         });
@@ -50,7 +50,7 @@
 
     }
 
-    /*function checkForm(){
+    function checkForm(){
         var check_error=false;
         $("#cat_name").bind('blur',function(){
             if(!$(this).val() || $(this).val().length>20){
@@ -77,7 +77,7 @@
             }
         });
         return check_error;
-    }*/
+    }
 
     function add(){
         var cat_name=$('#cat_name').val();
