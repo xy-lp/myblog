@@ -26,15 +26,7 @@
         <select name="pid" id="pid" class="dfinput">
             <option value="0">--顶级分类--</option>
             <?php
- foreach($catedata as $v){ ?>
-            if(in_array($v['cat_pid'],$ids)){
-                continue;
-            }
-            if($cateinfo['cat_pid']==$v['cat_id']){
-            $sel="selected='selected'";
-            }else{
-                $sel='';
-            }
+ foreach($catedata as $v){ if(in_array($v['cat_pid'],$ids)){ continue; } if($cateinfo['cat_pid']==$v['cat_id']){ $sel="selected='selected'"; }else{ $sel=''; } ?>
                 <option <?php echo $sel?> value="<?php echo $v['cat_id']?>"><?php echo str_repeat('&nbsp;',$v['deep']*2).$v['cat_name']?></option>
             <?php
  } ?>

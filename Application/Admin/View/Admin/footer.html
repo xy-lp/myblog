@@ -9,8 +9,8 @@
 
 <body>
 	<div class="footer">
-    <span>仅供学习交流，请勿用于任何商业用途</span>
-    <i>版权所有 2014 uimaker.com</i>    
+    <span>月哥哥国际后援会~</span>
+    <i>版权所有 www.yuegege.com</i>
     </div>    
 </body>
 </html>

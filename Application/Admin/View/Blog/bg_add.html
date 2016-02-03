@@ -47,44 +47,41 @@ $(document).ready(function(e) {
   	<div id="tab1" class="tabson">
     
    
-    <form name="form1" method="post" action="{:U('Admin/Content/addcontent')}" enctype="multipart/form-data">
+    <form name="form1" method="post" action="<?php echo U('bg_add')?>" enctype="multipart/form-data">
     <ul class="forminfo">
-    <li><label>标题<b>*</b></label><input name="title" type="text" class="dfinput" value=""  style="width:518px;"/></li>
+    <li><label>标题<b>*</b></label><input name="bg_title" type="text" class="dfinput" value=""  style="width:518px;"/></li>
    
-     <li><label>作者<b></b></label><input name="author" type="text" class="dfinput" value="" size="20" style="width:518px;"/></li>
+     <li><label>作者<b>*</b></label><input name="bg_author" type="text" class="dfinput" value="" size="20" style="width:518px;"/></li>
     
-    <li><label>分类<b></b></label>
-    
+    <li><label>分类<b>*</b></label>
     <div class="vocation">
-    <select class="select1" name="c_id">
-	<foreach name="list" item="vo">
-    <option value="{$vo.id}">{$vo.title}</option>
-    </foreach>
+    <select class="select1" name="cat_id">
+        <?php
+        foreach($catedata as $v){
+        ?>
+        <option value="<?php echo $v['bg_id']?>" <?php echo $v['bg_id']==$cat_id?'selected':''?>><?php echo str_repeat('--',$v['deep']).$v['cat_name']?></option>
+        <?php
+        }
+        ?>
     </select>
     </div>
-    
-    
-    
     </li>
-	  <li><label>描述</label><textarea name="excerpt" cols="" rows="" class="textinput"></textarea><i>(200字以内)</i></li>
-	  
-     <li><label>设置时间<b></b></label><input name="time" type="text" readonly="readonly" class="dfinput" value="<php> echo date("Y-m-d H:i:s");</php>"  style="width:518px;"/></li>
-	  <li><label>缩略图</label><input type="file" name="imgpath"/>
-    <li><label>内容<b></b></label>
-<input type="hidden" id="content" name="content" value="" style="display:none"><input type="hidden" id="content___Config" value="" style="display:none">
-<iframe id="content___Frame" src="__PUBLIC__/Admin/fckeditor/editor/fckeditor.html?InstanceName=content&amp;Toolbar=Normal" width="100%" height="320" frameborder="0" scrolling="no" style="margin: 0px; padding: 0px; border: 0px; background-color: transparent; background-image: none; width: 100%; height: 320px;"></iframe>
 
-    
-    
+    <li><label>描述</label><textarea name="bg_content" cols="" rows="" class="textinput"></textarea><i>(100字以内)</i></li>
+	  
+    <li><label>设置时间</label><input name="time" type="text" readonly="readonly" class="dfinput" value="<php> echo date("Y-m-d H:i:s");</php>"  style="width:518px;"/></li>
+
+    <li><label>缩略图</label><input type="file" name="bg_imgpath"/>
+
+    <li><label>内容<b>*</b></label>
+<input type="hidden" id="content" name="bg_content" value="" style="display:none"><input type="hidden" id="content___Config" value="" style="display:none">
+<iframe id="content___Frame" src="__PUBLIC__/Admin/fckeditor/editor/fckeditor.html?InstanceName=content&amp;Toolbar=Normal" width="100%" height="320" frameborder="0" scrolling="no" style="margin: 0px; padding: 0px; border: 0px; background-color: transparent; background-image: none; width: 100%; height: 320px;"></iframe>
     </li>
+
     <li><label>&nbsp;</label><input name="button" type="submit" class="btn" value="马上发布"/></li>
     </ul>
     </form>
-    </div> 
-    
-    
-  	
-       
+    </div>
 	</div> 
  
 	<script type="text/javascript"> 

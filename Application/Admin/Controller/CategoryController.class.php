@@ -7,13 +7,14 @@
  */
 namespace Admin\Controller;
 use Think\Controller;
+use Think\Page;
+
 class CategoryController extends Controller{
     /**
      * 显示分类列表
      */
     public function cat_list(){
         $list=D('Category')->getTree();
-        //p($list);
         $this->assign('list',$list);
         $this->display();
     }
@@ -74,10 +75,6 @@ class CategoryController extends Controller{
                 if(in_array($data['cat_pid'],$ids)){
                     $this->error('不能把自己和自己的子孙分类当作父级分类');
                 }
-                /*$pid=I('post.pid');
-                if($data['pid']==$pid){
-                    $this->error('更改成功')
-                }*/
                 $data['cat_id']=$id;
                 if($catemodel->save($data)!==false){
                     $this->success('修改成功',U('cat_list'));
