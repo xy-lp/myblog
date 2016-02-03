@@ -34,8 +34,8 @@ class CategoryModel extends Model{
     protected $_validate=array(
         array('cat_name','require','分类名称不能为空!'),
         array('cat_name','0,20','分类名称不能为空!',0,'length',3),
-        array('cat_name','','分类名称已存在!',0,'unique',1),
-        array('cat_pid','number','父类id错误!'),
+        array('cat_name','','分类名称已存在!',1,'unique','self::MODEL_INSERT'),
+        //array('cat_pid','number','父类id错误!'),
         array('cat_sort','0,254','排序值应为0~254之间的数字',0,'between',3),
         array('cat_sort','number','排序值应为0~254之间的数字!'),
         array('is_show','array(0,1)',0,'请选择是否显示',3,'in'),
@@ -57,7 +57,6 @@ class CategoryModel extends Model{
     //获取栏目的树形结构
     public function getTree($parent_id=0){
         $list= $this->where(array('is_show'=>'1'))->select();
-        //p($list);
         return $this->createTree($list, $parent_id,$deep=0);
     }
 
@@ -66,7 +65,7 @@ class CategoryModel extends Model{
         $arr=$this->select();
         return $this->_getChild($arr,$id);
     }
-    public function _getChild(){
+    public function _getChild($arr,$id){
         static $ids=array();
         foreach($arr as $v){
             if($v['cat_pid']==$id){

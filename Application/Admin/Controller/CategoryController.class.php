@@ -13,6 +13,7 @@ class CategoryController extends Controller{
      */
     public function cat_list(){
         $list=D('Category')->getTree();
+        //p($list);
         $this->assign('list',$list);
         $this->display();
     }
@@ -24,6 +25,7 @@ class CategoryController extends Controller{
         $model=D('Category');
         if(IS_POST){
             if(!$data=$model->create()){
+                echo 111;exit;
                 $this->error($model->getError(),U('Category/cat_add'),1);
             }else{
                 if($model->add($data))
@@ -72,12 +74,19 @@ class CategoryController extends Controller{
                 if(in_array($data['cat_pid'],$ids)){
                     $this->error('不能把自己和自己的子孙分类当作父级分类');
                 }
-                if($catemodel->save()!=false){
+                /*$pid=I('post.pid');
+                if($data['pid']==$pid){
+                    $this->error('更改成功')
+                }*/
+                $data['cat_id']=$id;
+                if($catemodel->save($data)!==false){
                     $this->success('修改成功',U('cat_list'));
                     exit;
                 }else{
                     $this->error($catemodel->getError());
                 }
+            }else{
+                $this->error($catemodel->getError());
             }
         }
         //取出要修改的分类的数据
