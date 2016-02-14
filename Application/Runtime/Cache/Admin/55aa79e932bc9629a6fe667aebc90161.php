@@ -73,9 +73,9 @@ $(document).ready(function(e) {
     <div class="vocation">
      <select class="select3" name="cat_id">
 	 <option value="">全部</option>
-     <?php if(is_array($info)): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['id'] == $id): ?><option value="<?php echo ($vo["id"]); ?>" selected="selected"><?php echo ($vo["title"]); ?></option>
+     <?php if(is_array($catedata)): $i = 0; $__LIST__ = $catedata;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if($vo['cat_id'] == $id): ?><option value="<?php echo ($vo["cat_id"]); ?>" selected="selected"><?php echo ($vo["cat_name"]); ?></option>
          <?php else: ?>
-             <option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["title"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+             <option value="<?php echo ($vo["cat_id"]); ?>"><?php echo ($vo["cat_name"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
     </select>
     </div>
     </li>
@@ -91,8 +91,7 @@ $(document).ready(function(e) {
         <th>标题</th> 
         <th>作者</th>
 		 <th>分类</th>
-        <th>发布时间</th>	
-        
+        <th>发布时间</th>
         <th>操作</th>
         </tr>
         </thead>
@@ -104,14 +103,11 @@ $(document).ready(function(e) {
             <td><?php echo $v['bg_id']?></td>
             <td><a href="" target="_bank" class="tablelink"><?php echo $v['bg_title']?></a> </td>
             <td><?php echo $v['bg_author']?></td>
-            <td>
-
-            </td>
-            <td></td>
-
+            <td value="<?php echo $v['cat_id']?>"><?php echo $v['cat_name']?></td>
+            <td><?php echo date($v['bg_time'],date('Y-m-d H:i:s'))?></td>
             <td>
                 <a href="" target="_bank" class="tablelink">查看</a>
-                <a href="<?php echo U('bg_update',array('bg_id'=>$v['bg_id']))?>" class="tablelink"> 修改</a>
+                <a href="<?php echo U('bg_edit',array('bg_id'=>$v['bg_id']))?>" class="tablelink"> 修改</a>
                 <a href="<?php echo U('bg_del',array('bg_id'=>$v['bg_id']))?>"  onclick="if(confirm('确定删除！')==false)return false;" class="tablelink">删除</a>
             </td>
             </tr>

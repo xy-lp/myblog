@@ -12,14 +12,21 @@ class BlogController extends Controller{
      * 博客列表
      */
     public function bg_list(){
-        $blogmodel=D('Blog');
-        $blogdata=$blogmodel->select();
-        $this->assign('blogdata',$blogdata);
-
         //取出文章的分类
         $catemodel=D('Category');
         $catedata=$catemodel->getTree();
         $this->assign('catedata',$catedata);
+
+        $blogmodel=D('Blog');
+        $blogdata=$blogmodel->order('bg_id desc')->select();
+
+        //将cat_name加入到blogdata里面
+        foreach ($blogdata as $k=>$v) {
+            $cat_name=$catemodel->where(array('cat_id'=>$v['cat_id']))->find();
+            $blogdata[$k]['cat_name']=$cat_name['cat_name'];
+
+        }
+        $this->assign('blogdata',$blogdata);
         $this->display();
     }
 
@@ -66,7 +73,24 @@ class BlogController extends Controller{
     /**
      * 博客修改
      */
-    public function bg_update(){
+    public function bg_edit(){
+        $id=I("get.bg_id");
+        //p($id);exit;
+        $blogmdoel=D('blog');
+        $blogdata=$blogmdoel->select();
+        if(IS_POST){
+            if($blogmdoel->create()){}
+        }
+
+
+        //取出要修改的字段信息
+        $bloginfo=$blogmdoel->find($id);
+        //p($bloginfo);exit;
+        $this->assign('bloginfo',$bloginfo);
+        //取出分类
+        $catemodel=D('Category');
+        $catedata=$catemodel->getTree();
+        $this->assign('catedata',$catedata);
         $this->display();
     }
 }

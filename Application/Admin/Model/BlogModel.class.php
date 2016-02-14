@@ -6,8 +6,8 @@ class BlogModel extends Model{
     /**
      * 字段验证
      */
-    protected $insertFields=array('bg_title','bg_author','bg_content');
-    protected $updateFields=array('bg_title','bg_author','bg_content');
+    protected $insertFields=array('bg_title','bg_author','bg_content','bg_time','cat_id');
+    protected $updateFields=array('bg_title','bg_author','bg_content','bg_time','cat_id');
 
     /**
      * 自动验证

@@ -64,7 +64,7 @@
         <td>
             <a href="#" class="tablelink">查看</a>
             <a href=" /index.php/Admin/Category/cat_update/cat_id/<?php echo ($v["cat_id"]); ?>" class="tablelink">修改 </a>
-            <a href=" /index.php/Admin/Category/cat_del/cat_id/<?php echo ($v["cat_id"]); ?>" class="tablelink"> 删除</a></td>
+            <a href=" /index.php/Admin/Category/cat_del/cat_id/<?php echo ($v["cat_id"]); ?>" onclick="if(confirm('确定删除！')==false)return false;" class="tablelink"> 删除</a></td>
         </tr><?php endforeach; endif; ?>
 
         </tbody>

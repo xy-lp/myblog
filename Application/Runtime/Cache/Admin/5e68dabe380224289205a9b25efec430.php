@@ -51,27 +51,24 @@ $(document).ready(function(e) {
     <form name="form1" method="post" action="<?php echo U('Admin/Content/editcontent');?>" enctype="multipart/form-data">
 	<input name="id" type="hidden" class="dfinput" value="<?php echo ($list["id"]); ?>"  style="width:518px;"/>
     <ul class="forminfo">
-    <li><label>标题<b>*</b></label><input name="title" type="text" class="dfinput" value="<?php echo ($list["title"]); ?>"  style="width:518px;"/></li>
+    <li><label>标题<b>*</b></label><input name="bg_name" type="text" class="dfinput" value="<?php echo ($bloginfo["bg_title"]); ?>"  style="width:518px;"/></li>
    
-     <li><label>作者<b></b></label><input name="author" type="text" class="dfinput" value="<?php echo ($list["author"]); ?>" size="20" style="width:518px;"/></li>
+     <li><label>作者<b></b></label><input name="bg_author" type="text" class="dfinput" value="<?php echo ($bloginfo["bg_author"]); ?>" size="20" style="width:518px;"/></li>
     
     <li><label>分类<b></b></label>
-    
     <div class="vocation">
-    <select class="select1" name="c_id">
-	<?php if(is_array($info)): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>" <?php if($vo['id']==$list['c_id']): ?>selected="selected"<?php endif; ?>><?php echo ($vo["title"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+    <select class="select1" name="cat_name">
+	<?php if(is_array($catedata)): $i = 0; $__LIST__ = $catedata;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["cat_id"]); ?>" <?php if($vo['cat_pid'] == $bloginfo['cat_id']): ?>selected="selected"<?php endif; ?>><?php echo ($vo["cat_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
     </select>
     </div>
-    
-    
-    
     </li>
-	  <li><label>描述</label><textarea name="excerpt" cols="" rows="" class="textinput" ><?php echo ($list["excerpt"]); ?></textarea><i>(200字以内)</i></li>
-     <li><label>设置时间<b></b></label><input name="time" type="text" class="dfinput" value="<?php echo (date("Y-m-d H:i:s",$list["time"])); ?>"  style="width:518px;"/></li>
-	  <li><label>缩略图</label><input type="file" name="imgpath"/></li>
+
+	  <li><label>描述</label><textarea name="excerpt" cols="" rows="" class="textinput" value="<?php echo ($bloginfo["bg_excerpt"]); ?>"></textarea><i>(200字以内)</i></li>
+     <li><label>设置时间<b></b></label><input name="time" type="text" class="dfinput" value="<?php echo ($bloginfo["bg_time"]); ?>"  style="width:518px;"/></li>
+	  <li><label>缩略图</label><input type="file" name="imgpath" value="<?php echo ($bloginfo["bg_imgpath"]); ?>"/></li>
     <li><label>内容<b></b></label>
 
-<input type="hidden" id="content" name="content" value="<?php echo ($list["content"]); ?>" style="display:none"><input type="hidden" id="content___Config" value="" style="display:none">
+<input type="hidden" id="content" name="content" value="<?php echo ($bloginfo["bg_content"]); ?>" style="display:none"><input type="hidden" id="content___Config" value="" style="display:none">
 <iframe id="content___Frame" src="/Public/Admin/fckeditor/editor/fckeditor.html?InstanceName=content&amp;Toolbar=Normal" width="100%" height="320" frameborder="0" scrolling="no" style="margin: 0px; padding: 0px; border: 0px; background-color: transparent; background-image: none; width: 100%; height: 320px;"></iframe>
 
     
@@ -93,11 +90,7 @@ $(document).ready(function(e) {
     <script type="text/javascript">
 	$('.tablelist tbody tr:odd').addClass('odd');
 	</script>
-    
-    
-    
-    
-    
+
     </div>
 
 

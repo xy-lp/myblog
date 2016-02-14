@@ -39,14 +39,11 @@ $(document).ready(function(e) {
     
     <div class="itab">
   	<ul> 
-    <li><a href="#tab1" class="selected" >发布博客</a></li> 
-    
+    <li><a href="#tab1" class="selected" >发布博客</a></li>
   	</ul>
     </div> 
     
   	<div id="tab1" class="tabson">
-    
-   
     <form name="form1" method="post" action="<?php echo U('bg_add')?>" enctype="multipart/form-data">
     <ul class="forminfo">
     <li><label>标题<b>*</b></label><input name="bg_title" type="text" class="dfinput" value=""  style="width:518px;"/></li>
@@ -55,11 +52,11 @@ $(document).ready(function(e) {
     
     <li><label>分类<b>*</b></label>
     <div class="vocation">
-    <select class="select1" name="cat_id">
+    <select class="select1" name="cat_id"><option value="0">---请选择分类---</option>
         <?php
         foreach($catedata as $v){
         ?>
-        <option value="<?php echo $v['bg_id']?>" <?php echo $v['bg_id']==$cat_id?'selected':''?>><?php echo str_repeat('--',$v['deep']).$v['cat_name']?></option>
+        <option value="<?php echo $v['cat_id']?>"><?php echo str_repeat('--',$v['deep']).$v['cat_name']?></option>
         <?php
         }
         ?>
@@ -69,7 +66,7 @@ $(document).ready(function(e) {
 
     <li><label>描述</label><textarea name="bg_content" cols="" rows="" class="textinput"></textarea><i>(100字以内)</i></li>
 	  
-    <li><label>设置时间</label><input name="time" type="text" readonly="readonly" class="dfinput" value="<php> echo date("Y-m-d H:i:s");</php>"  style="width:518px;"/></li>
+    <li><label>设置时间</label><input name="bg_time" type="text" readonly="readonly" class="dfinput" value="<?php echo date('Y-m-d H:i:s')?>"  style="width:518px;"/></li>
 
     <li><label>缩略图</label><input type="file" name="bg_imgpath"/>
 
@@ -91,14 +88,9 @@ $(document).ready(function(e) {
     <script type="text/javascript">
 	$('.tablelist tbody tr:odd').addClass('odd');
 	</script>
-    
-    
-    
-    
+
     
     </div>
-
-
 </body>
 
 </html>
