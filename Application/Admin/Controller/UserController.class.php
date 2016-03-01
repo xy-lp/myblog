@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: just
- * Date: 16/2/3
- * Time: 下午2:01
+ * Date: 16/2/25
+ * Time: 下午4:04
  */
 namespace Admin\Controller;
 use Think\Controller;
@@ -11,11 +11,13 @@ class UserController extends Controller{
     /**
      * 显示用户列表
      */
-    public function user_list(){
+    public function user_list($page_id=1){
         $list=M('user')->select();  //获取用户列表所有数据
-        $info=M('auth')->select();
+        $info=M('role')->field('re_id,re_name')->where(array('re_status'=>'1'))->select();
+        $data=data_page($list,$page_id);
         $this->assign('info',$info);
-        $this->assign('list',$list);
+        $this->assign('list',$data['list']);
+        $this->assign('page',$data['page']);
         $this->display();
     }
 
@@ -25,17 +27,26 @@ class UserController extends Controller{
     public function user_add(){
         $model=M('user');
         if(IS_POST){
-            $data=$model->create();     //获取提交的数据
-            $data['password']=md5($data['password']);   //将密码加密
-            if($model->add($data))
-                $this->success('添加成功',U('User/listUser'),1);
-            else
-                $this->error('添加失败',U('User/addUser'),1);
-            exit;
+            if($data=$model->create()){
+                //获取提交的数据
+                $data['us_password']=md5($data['password']);   //将密码加密
+                //生成密码密钥
+                $data['us_salt']=md5(uniqid(rand(), TRUE));
+                //生成密码
+                $data['us_password']= md5($data['password'].$data['salt']);
+                if($model->add($data))
+                    $this->success('添加成功',U('User/user_list'),1);
+                else
+                    $this->error('添加失败',U('User/user_add'),1);
+                exit;
+            }else{
+                $this->error($model->getError());
+            }
         }
         //显示添加页面
-        $info=M('auth')->field('id,title')->select();     //获取到权限分类
+        $info=M('role')->field('re_id,re_name')->where(array('re_status'=>'1'))->select();     //获取到权限分类
         $this->assign('info',$info);
+        //p($info);
         $this->display();
     }
 
@@ -43,70 +54,43 @@ class UserController extends Controller{
      * 删除用户
      */
     public function user_del($id){
-        $id=(int)$id;       //将id使用int转义
-        if(M('user')->delete($id))
-            $this->success('删除成功',U('User/listUser'),1);
+        $id=(int)$id;
+        if(M('User')->delete($id))
+            $this->success('删除成功',U('user_list'),1);
         else
-            $this->error('删除失败',U('User/listUser'),1);
-        exit;
+            $this->error('删除失败',U('user_list'),1);
     }
 
     /**
-     * 更改用户信息
+     * 修改用户
      */
     public function user_edit($id){
         $id=(int)$id;
-        $model=M('user');
+        $model=D('User');
         if(IS_POST){
-            $data=$model->create();     //获取所有提交的数据
-            $data['id']=$id;        //在数组中加上id
-            $data['password']=md5($data['password']);     //将密码加密
-            if($model->save($data))
-                $this->success('修改成功',U('User/listUser'),1);
-            else
-                $this->error('修改失败',U('User/editUser?id='.$data['id'].''),1);
-            exit;
+            if($data=$model->create()){
+                $data['us_id']=I('post.id');
+                if($model->save($data)){
+                    $this->success('修改成功',U('user_list'),1);
+                    exit;
+                }else{
+                    $this->error($model->getError());
+                }
+            }else{
+                $this->error($model->getError());
+            }
         }
-        //显示修改页面
-        $info=$model->where(array('id'=>$id))->find();      //查询获取到id那条记录
-        $list=M('auth')->field('id,title')->select();     //查询权限分类
+        $list=$model->where(array('us_id'=>$id))->find();
         $this->assign('list',$list);
+        $info=M('role')->field('re_id,re_name')->where(array('re_status'=>'1'))->select();
         $this->assign('info',$info);
         $this->display();
     }
 
     /**
-     * 更改密码
+     * 修改密码
      */
-    public function user_edit_pwd(){
-        $model=M('User');
-        if(IS_POST){
-            $data=$model->create();     //获取到提交的数据
-            $data['password']=md5($data['password']);   //将密码加密
-            $data['id']=I('uid');   //获取到提交的ID值
-            $pwd=$model->where(array('id'=>$data['id']))->field('password')->find();   //通过id查找那条记录的密码
-            $msg='修改失败';
-            if($data['password']==$pwd['password']){    //判断新密码是否和旧密码一样
-                $msg='新密码和旧密码一样，修改失败';
-            }else{
-                if($model->save($data))
-                    $msg='修改成功';
-            }
-            //$this->redirect('/Admin/Admin/index',array(),1,$msg);
-            //为了防止跳转的时候在main视图中嵌套，使用js跳转到后台首页
-            echo <<<jump
-            <script type="text/javascript">
-                alert('$msg');
-                window.top.location.href='/tpcms/index.php/Admin/Admin/index';
-            </script>
-jump;
-            exit;
-        }
-        //显示修改页面
-        $user=session('username');      //获取登录时保存在会话中的用户名
-        $list=$model->field('id,username,realname')->where(array('username'=>$user))->find();   //通过用户名查找记录
-        $this->assign('list',$list);
-        $this->display();
-    }
+    public function edit_pwd(){
 
+    }
 }

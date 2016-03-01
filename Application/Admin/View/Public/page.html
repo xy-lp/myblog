@@ -1,0 +1,10 @@
+<div class="pagin">
+    <div class="message">共<i class="blue">{$page.count}</i>条记录，当前显示第&nbsp;<i class="blue">{$page.page_id}&nbsp;</i>页</div>
+    <ul class="paginList">
+        <li class="paginItem"><a href="__SELF__/page_id/<?php echo $page['page_id']-1?>"><span class="<?php echo $page['page_id']==1?'pagepre':'pagenxt';?>"></span></a></li>
+        <?php for($i=1;$i<=$page['page_count'];$i++){?>
+        <li class="paginItem <?php if($page['page_id']==$i) echo 'current'?>"><a href="__SELF__/page_id/<?php echo $i?>"><?php echo $i?></a></li>
+        <?php }?>
+        <li class="paginItem"><a href="__SELF__/page_id/<?php echo $page['page_id']+1?>"><span class="<?php echo $page['page_id']==$page['page_count']?'pagepre':'pagenxt';?>"></span></a></li>
+    </ul>
+</div>

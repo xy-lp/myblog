@@ -22,26 +22,20 @@
     <div class="rightinfo">
     
     <div class="tools">
-    
+
     	<ul class="toolbar">
         <li class="click add"><span><img src="/Public/admin/images/t01.png" /></span>添加</li>
-        <li class="click"><span><img src="/Public/admin/images/t02.png" /></span>修改</li>
-        <li><span><img src="/Public/admin/images/t03.png" /></span>删除</li>
+        <li class="del_All"><span><img src="/Public/admin/images/t03.png" /></span>删除</li>
         <li><span><img src="/Public/admin/images/t04.png" /></span>统计</li>
         </ul>
-        
-        
-        <ul class="toolbar1">
-        <li><span><img src="/Public/admin/images/t05.png" /></span>设置</li>
-        </ul>
-    
+
     </div>
     
     
     <table class="tablelist">
     	<thead>
     	<tr>
-        <th><input name="" type="checkbox" value="" checked="checked"/></th>
+        <th><input name="" class="ckbox" type="checkbox" value=""/></th>
         <th>编号<i class="sort"><img src="/Public/admin/images/px.gif" /></i></th>
         <th>分类名称</th>
         <th>组编号</th>
@@ -53,7 +47,7 @@
         <tbody>
 
 <?php if(is_array($list)): foreach($list as $key=>$v): ?><tr>
-        <td width="5%"><input name="" type="checkbox" value="" /></td>
+        <td width="5%"><input name="" class="ckbox1" type="checkbox" value="<?php echo ($v["cat_id"]); ?>" /></td>
         <td width="5%"><?php echo ($v["cat_id"]); ?></td>
         <td width="40%">
             <?php echo str_repeat('--',$v['deep']*4),$v['cat_name'];?>
@@ -69,48 +63,26 @@
 
         </tbody>
     </table>
-    
-   
-    <div class="pagin">
-    	<div class="message">共<i class="blue">1256</i>条记录，当前显示第&nbsp;<i class="blue">2&nbsp;</i>页</div>
-        <ul class="paginList">
-        <li class="paginItem"><a href="javascript:;"><span class="pagepre"></span></a></li>
-        <li class="paginItem"><a href="javascript:;">1</a></li>
-        <li class="paginItem current"><a href="javascript:;">2</a></li>
-        <li class="paginItem"><a href="javascript:;">3</a></li>
-        <li class="paginItem"><a href="javascript:;">4</a></li>
-        <li class="paginItem"><a href="javascript:;">5</a></li>
-        <li class="paginItem more"><a href="javascript:;">...</a></li>
-        <li class="paginItem"><a href="javascript:;">10</a></li>
-        <li class="paginItem"><a href="javascript:;"><span class="pagenxt"></span></a></li>
-        </ul>
-    </div>
-    
-    
-    <div class="tip">
-    	<div class="tiptop"><span>提示信息</span><a></a></div>
-        
-      <div class="tipinfo">
-        <span><img src="/Public/admin/images/ticon.png" /></span>
-        <div class="tipright">
-        <p>是否确认对信息的修改 ？</p>
-        <cite>如果是请点击确定按钮 ，否则请点取消。</cite>
-        </div>
-        </div>
-        
-        <div class="tipbtn">
-        <input name="" type="button"  class="sure" value="确定" />&nbsp;
-        <input name="" type="button"  class="cancel" value="取消" />
-        </div>
-    
-    </div>
-    
-    
-    
+
+
+        <!-- page  -just-2015/02/29 -->
+        <div class="pagin">
+    <div class="message">共<i class="blue"><?php echo ($page["count"]); ?></i>条记录，当前显示第&nbsp;<i class="blue"><?php echo ($page["page_id"]); ?>&nbsp;</i>页</div>
+    <ul class="paginList">
+        <li class="paginItem"><a href="/index.php/Admin/Category/cat_list/page_id/<?php echo $page['page_id']-1?>"><span class="<?php echo $page['page_id']==1?'pagepre':'pagenxt';?>"></span></a></li>
+        <?php for($i=1;$i<=$page['page_count'];$i++){?>
+        <li class="paginItem <?php if($page['page_id']==$i) echo 'current'?>"><a href="/index.php/Admin/Category/cat_list/page_id/<?php echo $i?>"><?php echo $i?></a></li>
+        <?php }?>
+        <li class="paginItem"><a href="/index.php/Admin/Category/cat_list/page_id/<?php echo $page['page_id']+1?>"><span class="<?php echo $page['page_id']==$page['page_count']?'pagepre':'pagenxt';?>"></span></a></li>
+    </ul>
+</div>
+        <!-- page End -->
     
     </div>
 
     <script type="text/javascript" src="/Public/admin/js/jquery.js"></script>
+
+    <script type="text/javascript" src="/Public/admin/js/admin/check.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function(){

@@ -1,0 +1,210 @@
+[ 2016-02-29T00:18:17+08:00 ] 127.0.0.1 /Public/admin/admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003819s ]
+ERR: 无法加载模块:Public
+
+[ 2016-02-29T00:21:08+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003863s ]
+ERR: 无法加载模块:Index
+
+[ 2016-02-29T09:24:32+08:00 ] 127.0.0.1 /skin/2014/js/silder.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-29T09:24:32+08:00 ] 127.0.0.1 /static/api/js/share.js?v=89860593.js?cdnversion=404640
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+ERR: 无法加载模块:Static
+
+[ 2016-02-29T09:24:32+08:00 ] 127.0.0.1 /cpro/ui/cnw.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T09:24:32+08:00 ] 127.0.0.1 /cpro/ui/i.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T09:24:32+08:00 ] 127.0.0.1 /skin/blog/images/new.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000209s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-29T09:27:18+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+ERR: 无法加载模块:Index
+
+[ 2016-02-29T14:16:48+08:00 ] 127.0.0.1 /skin/2014/js/silder.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-29T14:16:48+08:00 ] 127.0.0.1 /cpro/ui/i.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T14:16:48+08:00 ] 127.0.0.1 /cpro/ui/cnw.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T14:16:48+08:00 ] 127.0.0.1 /static/api/js/share.js?v=89860593.js?cdnversion=404645
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+ERR: 无法加载模块:Static
+
+[ 2016-02-29T14:16:48+08:00 ] 127.0.0.1 /skin/blog/images/new.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-29T14:40:03+08:00 ] 127.0.0.1 /Public/admin/js/admin/now.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+ERR: 无法加载模块:Public
+
+[ 2016-02-29T15:18:54+08:00 ] 127.0.0.1 /cpro/ui/i.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T15:18:54+08:00 ] 127.0.0.1 /skin/2014/js/silder.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-29T15:18:54+08:00 ] 127.0.0.1 /static/api/js/share.js?v=89860593.js?cdnversion=404646
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+ERR: 无法加载模块:Static
+
+[ 2016-02-29T15:18:54+08:00 ] 127.0.0.1 /cpro/ui/cnw.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T15:18:54+08:00 ] 127.0.0.1 /skin/2014/js/silder.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-29T15:18:54+08:00 ] 127.0.0.1 /cpro/ui/i.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000311s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001513s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T15:18:54+08:00 ] 127.0.0.1 /cpro/ui/cnw.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T15:18:54+08:00 ] 127.0.0.1 /static/api/js/share.js?v=89860593.js?cdnversion=404646
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+ERR: 无法加载模块:Static
+
+[ 2016-02-29T15:18:54+08:00 ] 127.0.0.1 /skin/blog/images/new.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-29T21:55:40+08:00 ] 127.0.0.1 /cpro/ui/cnw.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T21:55:40+08:00 ] 127.0.0.1 /skin/2014/js/silder.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000961s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-29T21:55:40+08:00 ] 127.0.0.1 /cpro/ui/i.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T21:55:40+08:00 ] 127.0.0.1 /static/api/js/share.js?v=89860593.js?cdnversion=404652
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+ERR: 无法加载模块:Static
+
+[ 2016-02-29T21:55:40+08:00 ] 127.0.0.1 /skin/blog/images/new.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-29T21:55:41+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+ERR: 无法加载模块:Favicon
+
+[ 2016-02-29T21:55:43+08:00 ] 127.0.0.1 /skin/2014/js/silder.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-29T21:55:43+08:00 ] 127.0.0.1 /cpro/ui/cnw.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T21:55:43+08:00 ] 127.0.0.1 /cpro/ui/i.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+ERR: 无法加载模块:Cpro
+
+[ 2016-02-29T21:55:43+08:00 ] 127.0.0.1 /skin/blog/images/new.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+ERR: 无法加载模块:Skin
+
+[ 2016-02-29T21:55:43+08:00 ] 127.0.0.1 /static/api/js/share.js?v=89860593.js?cdnversion=404652
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+ERR: 无法加载模块:Static
+
+[ 2016-02-29T21:58:00+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+ERR: 无法加载模块:Index
+

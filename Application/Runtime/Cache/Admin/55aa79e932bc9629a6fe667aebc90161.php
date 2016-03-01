@@ -86,7 +86,7 @@ $(document).ready(function(e) {
     <table class="tablelist">
     	<thead>
     	<tr>
-        <th><input id="allchecked"  type="checkbox" value="" onclick="checkAll(this);"/></th>
+        <th><input id="allchecked"  type="checkbox" class="ckbox" value="" /></th>
         <th>编号<i class="sort"><img src="/Public/admin/images/px.gif" /></i></th>
         <th>标题</th> 
         <th>作者</th>
@@ -99,7 +99,7 @@ $(document).ready(function(e) {
         <?php
  foreach($blogdata as $v){ ?>
             <tr>
-            <td><input name="bg_id" type="checkbox" value="" /></td>
+            <td><input name="bg_id" class="ckbox1" type="checkbox" value="<?php echo $v['bg_id']?>" /></td>
             <td><?php echo $v['bg_id']?></td>
             <td><a href="" target="_bank" class="tablelink"><?php echo $v['bg_title']?></a> </td>
             <td><?php echo $v['bg_author']?></td>
@@ -117,14 +117,23 @@ $(document).ready(function(e) {
         
         </tbody>
     </table>
-    <div class="pagin" style="  float: left;"><input name="button" type="submit" class="scbtn" value="全部删除" onclick="location.href='index.php/admin/content/delAll'"/></div>
-     <div class="pagin" style="  float: right;">
-    	<div class="page" style="margin-top:0;"><?php echo ($page); ?></div>
-
-    </div>
     </form>
+        <!-- page  -just-2015/02/29 -->
+        <div class="pagin">
+    <div class="message">共<i class="blue"><?php echo ($page["count"]); ?></i>条记录，当前显示第&nbsp;<i class="blue"><?php echo ($page["page_id"]); ?>&nbsp;</i>页</div>
+    <ul class="paginList">
+        <li class="paginItem"><a href="/index.php/Admin/Blog/bg_list/page_id/<?php echo $page['page_id']-1?>"><span class="<?php echo $page['page_id']==1?'pagepre':'pagenxt';?>"></span></a></li>
+        <?php for($i=1;$i<=$page['page_count'];$i++){?>
+        <li class="paginItem <?php if($page['page_id']==$i) echo 'current'?>"><a href="/index.php/Admin/Blog/bg_list/page_id/<?php echo $i?>"><?php echo $i?></a></li>
+        <?php }?>
+        <li class="paginItem"><a href="/index.php/Admin/Blog/bg_list/page_id/<?php echo $page['page_id']+1?>"><span class="<?php echo $page['page_id']==$page['page_count']?'pagepre':'pagenxt';?>"></span></a></li>
+    </ul>
+</div>
+        <!-- page End -->
     </div>
-	</div> 
+	</div>
+
+    <script type="text/javascript" src="/Public/admin/js/admin/check.js"></script>
  
 	<script type="text/javascript"> 
       $("#usual1 ul").idTabs(); 

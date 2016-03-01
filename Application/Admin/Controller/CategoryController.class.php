@@ -2,20 +2,21 @@
 /**
  * Created by PhpStorm.
  * User: just
- * Date: 16/1/29
- * Time: 下午1:46
+ * Date: 16/2/23
+ * Time: 下午3:18
  */
 namespace Admin\Controller;
 use Think\Controller;
-use Think\Page;
 
 class CategoryController extends Controller{
     /**
      * 显示分类列表
      */
-    public function cat_list(){
+    public function cat_list($page_id=1){
         $list=D('Category')->getTree();
-        $this->assign('list',$list);
+        $data=data_page($list,$page_id);
+        $this->assign('list',$data['list']);
+        $this->assign('page',$data['page']);
         $this->display();
     }
 
@@ -23,10 +24,9 @@ class CategoryController extends Controller{
      * 添加分类操作
      */
     public function cat_add(){
-        $model=D('Category');
+        $model=D('category');
         if(IS_POST){
             if(!$data=$model->create()){
-                echo 111;exit;
                 $this->error($model->getError(),U('Category/cat_add'),1);
             }else{
                 if($model->add($data))
@@ -62,14 +62,16 @@ class CategoryController extends Controller{
      * 修改分类
      */
     public function cat_update(){
-        $id=I('get.cat_id');
-        //p($id);exit;
         $catemodel=D('Category');
         if(IS_POST){
             if($data=$catemodel->create()){
                 //判断提交的父id是否是自己和自己的子分类
                 $id=I('post.id');
-                $ids=$catemodel->getChild($id);
+                $id_array=$catemodel->getChild($id);
+                $ids=array();
+                foreach($id_array as $v){
+                    $ids[]=$v['cat_id'];
+                }
                 //把自己的id添加到子孙分类中
                 $ids[]=$id;
                 if(in_array($data['cat_pid'],$ids)){
@@ -86,6 +88,7 @@ class CategoryController extends Controller{
                 $this->error($catemodel->getError());
             }
         }
+        $id=I('get.cat_id');
         //取出要修改的分类的数据
         $cateinfo=$catemodel->find($id);
         $ids=$catemodel->getChild($id);

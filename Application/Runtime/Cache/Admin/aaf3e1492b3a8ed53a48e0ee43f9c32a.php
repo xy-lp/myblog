@@ -27,8 +27,11 @@
         <dd><div class="title"><span><img src="/Public/admin/images/leftico01.png" /></span>用户管理</div>
             <ul class="menuson">
 
-                <li><cite></cite><a href="/index.php/<?php echo ($vo2["url"]); ?>" target="rightFrame">用户列表</a><i></i></li>
-
+                <li><cite></cite><a href="/index.php/Admin/User/user_list" target="rightFrame">用户列表</a><i></i></li>
+                <li><cite></cite><a href="/index.php/Admin/User/user_add" target="rightFrame">添加用户</a><i></i></li>
+                <li><cite></cite><a href="/index.php/Admin/User/edit_pwd" target="rightFrame">修改密码</a><i></i></li>
+                <li><cite></cite><a href="/index.php/Admin/Role/role_list" target="rightFrame">角色列表</a><i></i></li>
+                <li><cite></cite><a href="/index.php/Admin/Role/role_add" target="rightFrame">添加角色</a><i></i></li>
             </ul>
         </dd>
 
@@ -40,10 +43,11 @@
             </ul>
         </dd>
 
-        <dd><div class="title"><span><img src="/Public/admin/images/leftico04.png" /></span>栏目管理</div>
+        <dd><div class="title"><span><img src="/Public/admin/images/leftico04.png" /></span>权限管理</div>
             <ul class="menuson">
 
-                <li><cite></cite><a href="/index.php/<?php echo ($vo2["url"]); ?>" target="rightFrame">栏目列表</a><i></i></li>
+                <li><cite></cite><a href="/index.php/Admin/Rule/rule_list" target="rightFrame">权限列表</a><i></i></li>
+                <li><cite></cite><a href="/index.php/Admin/Rule/rule_add" target="rightFrame">添加权限</a><i></i></li>
 
             </ul>
         </dd>

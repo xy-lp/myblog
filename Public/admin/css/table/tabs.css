@@ -1,0 +1,20 @@
+/*产品详情选项卡样式*/
+
+.o_a ul{ margin:0 10px 10px 0;  background:url(../images/new_tabs.gif) repeat-x; height:24px; line-height:24px;}
+.o_a ul li{ float:left; position:relative; height:24px;}
+.o_a ul li .median_line{ background:url(../images/new_tabs.gif) no-repeat 0 -120px; position:absolute; width:1px; height:24px;  top:6px; left:100%;}
+.o_a ul li .on{ margin:4px 8px 0 8px; padding:0 4px 0 4px; height:26px; line-height:18px; *line-height:20px; float:left; display:inline;}
+.o_a ul li a{ color:#5F1E00; text-decoration:none; position:relative; z-index:10;}
+.o_a ul li a:hover{ color:#5F1E00; text-decoration:underline;}
+.o_a ul li span{ position:absolute; top:5px; left:12px; color:#F3F5F2;}
+.o_a ul li.focus .on{ background:url(../images/new_tabs.gif) 0 -30px repeat-x; font-weight:bold; text-decoration:none;}
+.o_a ul li.focus .ll{ background:url(../images/new_tabs.gif) 0 -60px no-repeat; width:4px; height:26px; position:absolute; top:4px; left:4px;}
+.o_a ul li.focus .rr{background:url(../images/new_tabs.gif)  0 -90px no-repeat; width:4px; height:26px; position:absolute; top:4px; right:4px;}
+.o_a ul li.focus .jt{ background:url(../images/new_tabs.gif)  0 -150px no-repeat; width:11px; height:9px; position:absolute; left:40%; bottom:-6px !important; *bottom:-3px;}
+.o_a_a{padding: 4px;}
+
+.pa_ui_tabs_wrapper{position:relative;overflow:hidden;width:760px;}
+.pa_ui_tabs_wrapper li a{display:block}
+.pa_ui_tabs_scroll{position:relative;overflow:hidden;width:472px;}
+.pa_ui_tabs_scroll ul{margin:0 18px 10px 18px;width:5000px;position:relative;}
+.pa_ui_tabs_scroll ul li.i{float:left;display:inline;width:72px;}

@@ -1,0 +1,6 @@
+.accounttable{width:95%;border:solid 1px #dfb598}
+.accounttable thead{font-weight:bold;text-align:center;}
+.accounttable thead td{background-color:#056C9F;}/*cursor:pointer; cursor:hand;*/
+.accounttable tr{height:30px;line-height:30px;}
+.accounttable tr td{padding:3px;text-align:center;}
+.accounttable .hasDatepicker{width:50px;}

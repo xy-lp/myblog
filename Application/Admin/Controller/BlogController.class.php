@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: just
- * Date: 16/2/2
- * Time: 下午3:45
+ * Date: 16/2/23
+ * Time: 下午4:01
  */
 namespace Admin\Controller;
 use Think\Controller;
@@ -11,7 +11,7 @@ class BlogController extends Controller{
     /**
      * 博客列表
      */
-    public function bg_list(){
+    public function bg_list($page_id=1){
         //取出文章的分类
         $catemodel=D('Category');
         $catedata=$catemodel->getTree();
@@ -26,7 +26,11 @@ class BlogController extends Controller{
             $blogdata[$k]['cat_name']=$cat_name['cat_name'];
 
         }
-        $this->assign('blogdata',$blogdata);
+
+        $data=data_page($blogdata,$page_id);
+        //p($data);
+        $this->assign('blogdata',$data['list']);
+        $this->assign('page',$data['page']);
         $this->display();
     }
 
@@ -36,7 +40,7 @@ class BlogController extends Controller{
     public function bg_add(){
         if(IS_POST){
             $blogmodel=D('Blog');
-            if($blogmodel->create()){
+            if($data=$blogmodel->create()){
                 if($blogmodel->add()){
                     $this->success('添加成功',U('bg_list'));
                     exit;
@@ -51,16 +55,17 @@ class BlogController extends Controller{
         //取出文章的分类
         $catemodel=D('Category');
         $catedata=$catemodel->getTree();
+        //写入模版
         $this->assign('catedata',$catedata);
         $this->display();
     }
 
     /**
      * 删除博客
+     * @bg_id int 纪录的id
      */
     public function bg_del($bg_id){
-        $bg_id=I('get.bg_id');
-        //echo $bg_id;exit;
+        $bg_id=(int)$bg_id;
         $blogmodel=D('Blog');
         if($blogmodel->delete($bg_id)){
             $this->success('删除成功',U('bg_list'),1);
@@ -77,12 +82,9 @@ class BlogController extends Controller{
         $id=I("get.bg_id");
         //p($id);exit;
         $blogmdoel=D('blog');
-        $blogdata=$blogmdoel->select();
         if(IS_POST){
             if($blogmdoel->create()){}
         }
-
-
         //取出要修改的字段信息
         $bloginfo=$blogmdoel->find($id);
         //p($bloginfo);exit;

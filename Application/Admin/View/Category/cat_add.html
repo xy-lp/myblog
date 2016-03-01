@@ -9,11 +9,7 @@
 <body>
 
 	<div class="place">
-    <span>位置：</span>
-    <ul class="placeul">
-    <li><a href="#">首页</a></li>
-    <li><a href="#">表单</a></li>
-    </ul>
+    <span>添加分类</span>
     </div>
     
     <div class="formbody">
@@ -41,69 +37,7 @@
     </div>
 
 <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
-<script type="text/javascript">
-    /*$(function(){
-        $(".btn").bind('click',function(){
-            //add();
-        });
-    });
 
-    function checkForm(){
-
-    }
-
-    function checkForm(){
-        var check_error=false;
-        $("#cat_name").bind('blur',function(){
-            if(!$(this).val() || $(this).val().length>20){
-                if(!$(this).val()){
-                    $(".i_name").text('分类名称不能为空!').css({color:'red'});
-                    check_error=true;
-                }else if($(this).val().length>20){
-                    $(".i_name").text('分类名称长度应在0~20之间!').css({color:'red'});
-                    check_error=true;
-                }
-            } else{
-                $(".i_name").html('正确').css({color:''});
-            }
-        });
-        $("#sort").bind('blur',function(){
-            if(!$(this).val()){
-                $(".i_sort").text('排序值不能为空!').css({color:'red'});
-                check_error=true;
-            }else if($(this).val()>254 || $(this).val()<0 || isNaN($(this).val())){
-                $(".i_sort").text('排序值必须为0~254之间的数字!').css({color:'red'});
-                check_error=true;
-            }else{
-                $(".i_sort").html('正确').css({color:''});
-            }
-        });
-        return check_error;
-    }
-
-    function add(){
-        var cat_name=$('#cat_name').val();
-        var parent_id=$('#cat_pid').val();
-        var sort=$('#cat_sort').val();
-        var is_show=$('#is_show').val();
-        if(!cat_name || cat_name.length>20){
-            if(!cat_name){
-                $(".i_name").text('分类名称不能为空!').css({color:'red'});
-            }else if(cat_name.length>20){
-                $(".i_name").text('分类名称长度应在0~20之间!').css({color:'red'});
-            }
-        }else{
-                $(".i_name").html('正确').css({color:''});
-        }
-        if(!sort){
-            $(".i_sort").text('排序值不能为空!').css({color:'red'});
-        }else if(sort>254 || sort<0 || isNaN(sort)){
-            $(".i_sort").text('排序值必须为0~254之间的数字!').css({color:'red'});
-        }else{
-            $(".i_sort").html('正确').css({color:''});
-        }
-    }
-</script>
 </body>
 
 </html>

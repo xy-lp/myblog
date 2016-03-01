@@ -2,11 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: just
- * Date: 16/2/1
- * Time: 下午5:40
+ * Date: 16/2/23
+ * Time: 下午2:59
  */
-function p($msg){
+function p($data){
     echo '<pre>';
-    var_dump($msg);
+    var_dump($data);
     exit;
 }

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="__PUBLIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+table.imagetable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 0px;
+	border-color: #999999;
+	border-collapse: collapse;
+	
+}
+table.imagetable th {
+	
+	border-width: 0px;
+	padding: 10px;
+	border-style: solid;
+	border-color: #999999;
+}
+table.imagetable td {
+	
+	border-width: 1px;
+	padding: 10px;
+	border-style: dashed;
+	border-color: #999999;
+	
+}
+</style>
+</head>
+
+<body>
+<div class="formbody">
+   <form action="{:U('Role/get_rule')}" method="post" name="form1">
+ <div class="formtitle"><span>权限管理</span></div>
+<table border="0" cellspacing="0" width="70%" class="imagetable" cellpadding="0" align="center">
+ <input type="hidden" name="role_id" value="{$id}">
+    <volist name="list" id="vo1">
+	 <tr style="background: url(__PUBLIC__/admin/images/th.gif) repeat-x;">
+		<td nowrap=""  colspan="2" align="">
+			<input type='checkbox' name='ru_id[]' value='{$vo1.ru_id}'
+			<?php
+			 foreach($rule as $val){
+				if($val==$vo1['ru_id'])
+					echo "checked='checked'";
+			}?>/>{$vo1.ru_name}   </td>
+   </tr>
+	<volist name="info" id="vo2">
+	  <tr>
+
+		 <if condition="$vo1['ru_id'] eq $vo2['ru_pid']">
+			 <td nowrap="" >&nbsp;&nbsp;&nbsp;&nbsp;
+			 <input type='checkbox' name='ru_id[]' value='{$vo2.ru_id}'
+			 <?php foreach($rule as $val){
+        		if($val==$vo2['ru_id'])
+        		echo "checked='checked'";
+			}?>/>
+			 {$vo2.ru_name}	</td>
+		 </if>
+
+     <!--<td nowrap="" >
+	   <volist name="action.child" id="vo">
+	 <input type='checkbox' name='access[]' value='{$vo.id}'  <if condition="strstr($nod,$vo['id'])">checked='checked'</if>/>{$vo.title}
+		 </volist>
+	 </td>-->
+   </tr>
+
+	</volist>
+
+		
+	</volist>
+   
+    </div>
+   <tr>
+    <td nowrap="" class="TableFooter" colspan="2" align="center">
+       <input name="button" type="submit" class="btn" value="确认保存"/>    </td>
+   </tr>
+</table>
+</form>
+    
+    </div>
+
+
+</body>
+
+</html>
