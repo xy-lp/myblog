@@ -7,7 +7,7 @@
  */
 namespace Admin\Controller;
 use Think\Controller;
-class BlogController extends Controller{
+class BlogController extends BaseController{
     /**
      * 博客列表
      */

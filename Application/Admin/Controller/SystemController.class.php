@@ -7,7 +7,7 @@
  */
 namespace Admin\Controller;
 use Think\Controller;
-class SystemController extends Controller{
+class SystemController extends BaseController{
     /**
      * 导出数据
      */

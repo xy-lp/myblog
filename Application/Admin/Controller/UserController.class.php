@@ -7,7 +7,7 @@
  */
 namespace Admin\Controller;
 use Think\Controller;
-class UserController extends Controller{
+class UserController extends BaseController{
     /**
      * 显示用户列表
      */
@@ -29,11 +29,11 @@ class UserController extends Controller{
         if(IS_POST){
             if($data=$model->create()){
                 //获取提交的数据
-                $data['us_password']=md5($data['password']);   //将密码加密
+                $data['password']=md5($data['password']);   //将密码加密
                 //生成密码密钥
                 $data['us_salt']=md5(uniqid(rand(), TRUE));
                 //生成密码
-                $data['us_password']= md5($data['password'].$data['salt']);
+                $data['us_password']= md5($data['password'].$data['us_salt']);
                 if($model->add($data))
                     $this->success('添加成功',U('User/user_list'),1);
                 else

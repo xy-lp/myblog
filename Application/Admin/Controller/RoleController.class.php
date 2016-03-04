@@ -7,7 +7,7 @@
  */
 namespace Admin\Controller;
 use Think\Controller;
-class RoleController extends Controller{
+class RoleController extends BaseController{
     /**
      * 角色列表
      */

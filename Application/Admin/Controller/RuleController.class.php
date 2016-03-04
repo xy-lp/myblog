@@ -7,7 +7,7 @@
  */
 namespace Admin\Controller;
 use Think\Controller;
-class RuleController extends Controller{
+class RuleController extends BaseController{
     /**
      * 权限列表
      */
