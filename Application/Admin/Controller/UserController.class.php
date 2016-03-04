@@ -91,6 +91,26 @@ class UserController extends BaseController{
      * 修改密码
      */
     public function edit_pwd(){
+        $model=D('user');
+        $username=session('username');
+        $list=$model->field('us_id,us_realname,us_username,us_password,us_salt')->where(array('us_username'=>$username))->find();
+        if(IS_POST){
+                $data['us_id']=$list['us_id'];
+                $data['us_password']=md5(I('post.password').$list['us_salt']);
+                $data['us_realname']=I('post.realname');
+                if($model->save($data)){
+                    echo <<<jump
+                        <script type="text/javascript">
+                            alert('修改成功,请重新登录');
+                            window.top.location.href='/index.php/admin/Login/outLogin';
+                        </script>
+jump;
+                }
+                else
+                    $this->error('修改失败',U('User/edit_pwd'),1);
 
+        }
+        $this->assign('list',$list);
+        $this->display();
     }
 }

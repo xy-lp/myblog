@@ -19,6 +19,8 @@ class AdminController extends BaseController{
      * 后台头部页面
      */
     public function top(){
+        $realname=M('user')->field('us_realname')->where(array('us_username'=>session('username')))->find();
+        $this->assign('realname',$realname['us_realname']);
         $this->display();
     }
 
@@ -33,6 +35,8 @@ class AdminController extends BaseController{
      * 后台显示部分页面
      */
     public function main(){
+        $login_time=M('user')->field('us_login_time')->where(array('us_username'=>session('username')))->find();
+        $this->assign('login_time',$login_time['us_login_time']);
         $this->display();
     }
 

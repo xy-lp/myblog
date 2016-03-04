@@ -64,4 +64,29 @@ class RuleModel extends Model{
         }
         return $ids;
     }
+
+    /**
+     * 生成自己的父类名称数组
+     * @param $arr array 数据的总集
+     * @param $pid int 当前纪录的父类id
+     * @return array 父类name的集合
+     */
+    private function _getPidName($arr,$pid){
+        static $names=array();
+        foreach($arr as $v){
+            if($v['ru_id']==$pid){
+                $names[]=$v['ru_name'];
+                $this->_getPid($arr,$v['ru_id']);
+            }
+        }
+        return $names;
+    }
+
+    /**
+     * 获取父类名称数组
+     */
+    public function getPidName($pid){
+        $arr=M('rule')->field('ru_id,ru_name,ru_pid')->select();
+        return $this->_getPidName($arr,$pid);
+    }
 }
