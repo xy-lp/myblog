@@ -10,9 +10,19 @@
 <body style="background:#f0f9fd;">
 <div class="lefttop"><span></span>YP-Love</div>
 <dl class="leftmenu">
+    <volist name="list" id="vo">
+        <dd><div class="title"><span><img src="__PUBLIC__/admin/images/leftico04.png" /></span>{$vo.ru_name}</div>
+            <ul class="menuson">
+                <volist name="info" id="vo1">
+                    <if condition="$vo['ru_id'] eq $vo1['ru_pid']">
+                        <li><cite></cite><a href="__ROOT__/index.php/{$vo1.ru_url}" target="rightFrame">{$vo1.ru_name}</a><i></i></li>
+                    </if>
+                </volist>
+            </ul>
+        </dd>
+    </volist>
 
-
-        <dd><div class="title"><span><img src="__PUBLIC__/admin/images/leftico03.png" /></span>博客管理</div>
+        <!--<dd><div class="title"><span><img src="__PUBLIC__/admin/images/leftico03.png" /></span>博客管理</div>
             <ul class="menuson">
 
                         <li><cite></cite><a href="__MODULE__/Blog/bg_add" target="rightFrame">发表博客</a><i></i></li>
@@ -58,7 +68,7 @@
                 <li><cite></cite><a href="__MODULE__/System/export_data" target="rightFrame">导出数据</a><i></i></li>
 
             </ul>
-        </dd>
+        </dd>-->
 
 </dl>
 
