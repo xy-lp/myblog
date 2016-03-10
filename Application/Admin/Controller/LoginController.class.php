@@ -61,7 +61,8 @@ class LoginController extends Controller{
             }
             //更改数据库中该账号的登录时间和ip地址
             $data['us_login_time']=time();     //获取当前的时间戳
-            $data['us_login_ip']=$_SERVER['SERVER_ADDR'];   //获取当前的ip地址
+            $ip=$_SERVER['SERVER_ADDR'];   //获取当前的ip地址
+            $data['us_login_ip']=bindec(decbin(ip2long($ip)));  //将IP地址变成int型
             $model->where(array('us_username'=>$data['us_username']))->save($data);   //将数据库中登录时候和ip地址更新
             //获取账号权限，并写入session
             $rule=M('role')->field('re_rules')->where(array('re_id'=>$i['us_role_id']))->find();    //获取账号相应的权限

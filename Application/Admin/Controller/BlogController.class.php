@@ -79,12 +79,21 @@ class BlogController extends BaseController{
      * 博客修改
      */
     public function bg_edit(){
-        $id=I("get.bg_id");
-        //p($id);exit;
         $blogmdoel=D('blog');
         if(IS_POST){
-            if($blogmdoel->create()){}
+            //获取表单提交的数据
+            if($data=$blogmdoel->create()){
+                $data['bg_id']=I('post.bg_id');     //获取修改数据的原id
+                $data['bg_update_time']=time();     //'博客修改时间'字段
+                if($blogmdoel->save($data)){
+                    $this->success('修改成功',U('bg_list'),1);
+                    exit;
+                }else{
+                    $this->error($blogmdoel->getError());
+                }
+            }
         }
+        $id=I("get.bg_id");
         //取出要修改的字段信息
         $bloginfo=$blogmdoel->find($id);
         //p($bloginfo);exit;
@@ -92,6 +101,7 @@ class BlogController extends BaseController{
         //取出分类
         $catemodel=D('Category');
         $catedata=$catemodel->getTree();
+        //p($catedata);
         $this->assign('catedata',$catedata);
         $this->display();
     }
