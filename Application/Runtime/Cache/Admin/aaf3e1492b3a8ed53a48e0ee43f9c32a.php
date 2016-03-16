@@ -10,9 +10,13 @@
 <body style="background:#f0f9fd;">
 <div class="lefttop"><span></span>YP-Love</div>
 <dl class="leftmenu">
+    <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><dd><div class="title"><span><img src="/Public/admin/images/leftico04.png" /></span><?php echo ($vo["ru_name"]); ?></div>
+            <ul class="menuson">
+                <?php if(is_array($info)): $i = 0; $__LIST__ = $info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($i % 2 );++$i; if($vo['ru_id'] == $vo1['ru_pid']): ?><li><cite></cite><a href="/index.php/<?php echo ($vo1["ru_url"]); ?>" target="rightFrame"><?php echo ($vo1["ru_name"]); ?></a><i></i></li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+        </dd><?php endforeach; endif; else: echo "" ;endif; ?>
 
-
-        <dd><div class="title"><span><img src="/Public/admin/images/leftico03.png" /></span>博客管理</div>
+        <!--<dd><div class="title"><span><img src="/Public/admin/images/leftico03.png" /></span>博客管理</div>
             <ul class="menuson">
 
                         <li><cite></cite><a href="/index.php/Admin/Blog/bg_add" target="rightFrame">发表博客</a><i></i></li>
@@ -55,10 +59,10 @@
         <dd><div class="title"><span><img src="/Public/admin/images/leftico05.png" /></span>系统管理</div>
             <ul class="menuson">
 
-                <li><cite></cite><a href="/index.php/<?php echo ($vo2["url"]); ?>" target="rightFrame">导出数据</a><i></i></li>
+                <li><cite></cite><a href="/index.php/Admin/System/export_data" target="rightFrame">导出数据</a><i></i></li>
 
             </ul>
-        </dd>
+        </dd>-->
 
 </dl>
 

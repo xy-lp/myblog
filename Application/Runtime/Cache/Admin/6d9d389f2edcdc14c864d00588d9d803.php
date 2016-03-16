@@ -25,7 +25,7 @@ $(function(){
     </div>
         
     <ul class="nav">
-    <li><a href="/admin/Blog/bg_add" target="rightFrame" class="selected"><img src="/Public/admin/images/icon01.png" title="工作台" /><h2>工作台</h2></a></li>
+    <li><a href="/admin/Blog/bg_add" target="rightFrame" class="selected"><img src="/Public/admin/images/icon01.png" title="工作台" /><h2>首页</h2></a></li>
     <li><a href="/admin/Templates/tl_list" target="rightFrame"><img src="/Public/admin/images/icon02.png" title="模型管理" /><h2>模型管理</h2></a></li>
     <li><a href="/Admin/Rule/rule_list"  target="rightFrame"><img src="/Public/admin/images/icon03.png" title="模块设计" /><h2>模块设计</h2></a></li>
     <li><a href="tools.html"  target="rightFrame"><img src="/Public/admin/images/icon04.png" title="常用工具" /><h2>常用工具</h2></a></li>
@@ -35,13 +35,13 @@ $(function(){
             
     <div class="topright">    
     <ul>
-    <li><span><img src="/Public/admin/images/help.png" title="帮助"  class="helpimg"/></span><a href="#">帮助</a></li>
+    <li><a href="/"><span><img src=""  class="helpimg"/></span>芝麻开门</li></a>
     <li><a href="#">关于</a></li>
-    <li><a href="login.html" target="_parent">退出</a></li>
+    <li><a href="/index.php/Admin/Login/outLogin" onclick="if(confirm('是否退出?')==false)return false;" target="_parent">退出</a></li>
     </ul>
      
     <div class="user">
-    <span>admin</span>
+    <span><?php echo ($realname); ?></span>
     <i>消息</i>
     <b>5</b>
     </div>    

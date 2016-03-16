@@ -29,7 +29,7 @@
     
     <div class="welinfo">
     <span><img src="/Public/admin/images/time.png" alt="时间" /></span>
-    <i>您上次登录的时间：2013-10-09 15:22</i> （不是您登录的？<a href="#">请点这里</a>）
+    <i>您上次登录的时间：<?php echo date('Y-m-d H:i:s',$login_time)?><!--2013-10-09 15:22--></i> （不是您登录的？<a href="#">请点这里</a>）
     </div>
     
     <div class="xline"></div>
